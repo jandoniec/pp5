@@ -15,6 +15,18 @@
 </head>
 
 <body>
+  <div id="customer-list">
+    <ul id="customer-data">Lista Klientow
+      <li>Jan Nowak</li>
+      <button class="btn-primary" type="button" onclick="showForm()">Show form</button>
+    </ul>
+  </div>
+  <div class="customer-form" style="display: none;">
+    <h1 id="login-form">Form</h1>
+    <div class="d-flex justify-content-center">
+    </div>
+  </div>
+
 
     <form class="row g-3 p-3" id="form" onsubmit="handleSubmit(event)">
 
@@ -180,14 +192,54 @@
 
         }
 
-        
-
-
-
-        
-
+      
       </script>
+  <script>
+  function showForm(){
+    document.getElementById('customer=list').style.display = "none";
+    document.getElementById('costumer-form').style.display="block";
 
+  }
+
+  function showList(){
+    document.getElementById('customer=list').style.display = "block";
+    document.getElementById('costumer-form').style.display="none";
+    let ul = document.getElementById('customer-list-data');
+    ul.innerHTML=<li>$(customersList[0].name)</li>
+    
+  }
+  var customersList=[];
+function save(event){
+  event.preventDefault();
+
+let formData = {
+
+cn : document.getElementById('CompanyName').value,
+
+nip : document.getElementById('NIP').value,
+
+City : document.getElementById('City').value,
+
+Street : document.getElementById('Street').value,
+
+HouseNr : document.getElementById('HouseNr').value,
+
+FlatNr : document.getElementById('FlatNr').value,
+
+PostalCode : document.getElementById('PostalCode').value,
+
+floatingTextarea : document.getElementById('comments').value,
+
+floatingSelect : document.getElementById('check').checked
+
+};  
+
+console.log(formData) 
+
+}
+
+
+    </script>
 </body>
 
 </html>
